@@ -24,8 +24,8 @@ router.post("/", async (req, res) => {
             }).save();
         }
 
-        const link = `${process.env.BASE_URL}/password-reset/${user._id}/${token.token}`;
-        await sendEmail(user.email, "Password reset", link);
+        const link = (`http://localhost:3000/api/password-reset/${user._id}/${token.token}`);
+        await sendEmail(user.email,"Link",`${link}`);
 
         res.send("password reset link sent to your email account");
     } catch (error) {
