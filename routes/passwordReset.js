@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
             }).save();
         }
 
-        const link = (`http://localhost:3000/api/password-reset/${user._id}/${token.token}`);
+        const link = (`https://password-reset-flow-rajes.netlify.app/api/password-reset/${user._id}/${token.token}`);
         await sendEmail(user.email,"Link",`${link}`);
 
         res.send("password reset link sent to your email account");
