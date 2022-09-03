@@ -14,6 +14,10 @@ app.use(cors({
    origin :"*"
 }))
 
+app.get("/", (req, res) => {
+   res.send("Webserver start running")
+ });
+ 
 app.use("/api/users", users);
 app.use("/api/password-reset", passwordReset);
 
